@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import ReduxThunk from "redux-thunk";
 
-function App() {
+import Routes from "./Routes";
+import ingredientsReducers from "./store/reducers/ingredientsReducers/ingredientsReducers";
+import cartReducers from "./store/reducers/cartReducers/cartReducers";
+
+const rootReducer = combineReducers({
+  ingredients: ingredientsReducers,
+  cart: cartReducers,
+});
+
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Routes />
+    </Provider>
   );
-}
-
+};
 export default App;

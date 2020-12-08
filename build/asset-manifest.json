@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4e3614f9.chunk.css",
+    "main.js": "/static/js/main.be2d9b5d.chunk.js",
+    "main.js.map": "/static/js/main.be2d9b5d.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c959de8f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c959de8f.js.map",
+    "static/js/2.ee7efde7.chunk.js": "/static/js/2.ee7efde7.chunk.js",
+    "static/js/2.ee7efde7.chunk.js.map": "/static/js/2.ee7efde7.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.5c14405c2d78d6b1a6db89abc387593c.js": "/precache-manifest.5c14405c2d78d6b1a6db89abc387593c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.4e3614f9.chunk.css.map": "/static/css/main.4e3614f9.chunk.css.map",
+    "static/js/2.ee7efde7.chunk.js.LICENSE.txt": "/static/js/2.ee7efde7.chunk.js.LICENSE.txt",
+    "static/media/Cheese.jpeg": "/static/media/Cheese.c2836c9b.jpeg",
+    "static/media/Chicken.jpeg": "/static/media/Chicken.eb30d83e.jpeg",
+    "static/media/Mayonnaise.jpeg": "/static/media/Mayonnaise.1494678f.jpeg",
+    "static/media/Salad.jpeg": "/static/media/Salad.91fdfe66.jpeg",
+    "static/media/burger-logo.png": "/static/media/burger-logo.b8503d26.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c959de8f.js",
+    "static/js/2.ee7efde7.chunk.js",
+    "static/css/main.4e3614f9.chunk.css",
+    "static/js/main.be2d9b5d.chunk.js"
+  ]
+}

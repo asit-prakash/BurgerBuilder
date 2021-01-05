@@ -25,15 +25,17 @@ const ItemDetails = (props) => {
       </ul>
       <div className="d-flex justify-content-between flex-wrap mt-2 align-items-center">
         <p className="lead text-light">Total Price: ₹ {props.itemPrice}</p>
-        <button
-          type="button"
-          className="btn btn-sm btn-danger"
-          onClick={() => {
-            props.removeItem(props.cartItemId);
-          }}
-        >
-          Remove
-        </button>
+        {props.removeItem !== undefined && (
+          <button
+            type="button"
+            className="btn btn-sm btn-danger"
+            onClick={() => {
+              props.removeItem(props.cartItemId);
+            }}
+          >
+            Remove
+          </button>
+        )}
       </div>
     </>
   );

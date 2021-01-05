@@ -6,7 +6,3 @@ export const addToCart = (item) => {
     item,
   };
 };
-
-// export const GET_CART_ITEMS = "GET_CART_ITEMS";
-
-

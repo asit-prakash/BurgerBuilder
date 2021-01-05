@@ -2,7 +2,7 @@ import React from "react";
 //webpack method
 var images = require.context("../../../assets/ingredient-images", true);
 
-const BuildControl = (props) => {
+const BuildControl = React.memo((props) => {
   let imgSrc = images(`./${props.ingredients.label}.jpeg`);
   return (
     <div className="media">
@@ -52,5 +52,6 @@ const BuildControl = (props) => {
       </div>
     </div>
   );
-};
+});
+
 export default BuildControl;

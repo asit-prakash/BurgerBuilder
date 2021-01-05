@@ -74,7 +74,7 @@ const Cart = (props) => {
     if (selectedStore !== "" && orderErrorMsg === "Select a store") {
       setOrderErrorMsg("");
     }
-  }, [selectedStore]);
+  }, [selectedStore,orderErrorMsg]);
 
   const clearCartHandler = () => {
     clearCart();

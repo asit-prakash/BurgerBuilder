@@ -43,7 +43,7 @@ const Auth = ({ history }) => {
       setFirstName("");
       setLastName("");
     }
-  }, [authData]);
+  }, [authData,history]);
 
   useEffect(() => {
     const currentAuthType = history.location.pathname.substring(
@@ -75,7 +75,7 @@ const Auth = ({ history }) => {
     if (authData.userId !== "") {
       history.replace("/");
     }
-  }, [authData.userId]);
+  }, [authData.userId,history]);
 
   const authDataSubmitHandler = (event) => {
     event.preventDefault();

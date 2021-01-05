@@ -1,7 +1,7 @@
 import React from "react";
 import BuildControl from "./BuildControl/BuildControl";
 
-const BuildControls = (props) => {
+const BuildControls = React.memo((props) => {
   const ingredientData = {};
   const controls = [];
   for (let ing in props.ingredients) {
@@ -48,5 +48,6 @@ const BuildControls = (props) => {
       </div>
     </div>
   );
-};
+});
+
 export default BuildControls;

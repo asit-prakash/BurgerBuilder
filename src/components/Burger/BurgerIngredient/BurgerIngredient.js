@@ -3,7 +3,7 @@ import styles from "./BurgerIngredient.module.css";
 import propTypes from "prop-types";
 import { useSelector } from "react-redux";
 
-const BurgerIngredient = (props) => {
+const BurgerIngredient = React.memo((props) => {
   const ingredients = useSelector((state) => state.ingredients);
   const availableIngredients = ingredients.ingredients;
 
@@ -34,9 +34,10 @@ const BurgerIngredient = (props) => {
       ingredient = null;
   }
   return ingredient;
-};
+});
 
 BurgerIngredient.propTypes = {
   type: propTypes.string.isRequired,
 };
+
 export default BurgerIngredient;

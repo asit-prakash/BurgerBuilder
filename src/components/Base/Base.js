@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
+import Navigation from "../Navigation/Navigation";
 
 const Base = (props) => {
   return (
     <>
-      <Navbar />
+      <Navigation />
       <main>{props.children}</main>
     </>
   );

@@ -36,8 +36,19 @@ export const loadCart = () => {
 
 export const clearCart = () => {
   if (typeof window !== undefined) {
-    localStorage.removeItem("cart");
-    let cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
+    // localStorage.removeItem("cart");
+    // let cart = [];
+    // localStorage.setItem("cart", JSON.stringify(cart));
+
+    return new Promise((resolve, reject) => {
+      try {
+        localStorage.removeItem("cart");
+        let cart = [];
+        localStorage.setItem("cart", JSON.stringify(cart));
+        resolve("done")
+      } catch (err) {
+        reject(err);
+      }
+    });
   }
 };

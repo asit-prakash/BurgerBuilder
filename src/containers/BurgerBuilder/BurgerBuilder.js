@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Alert } from "react-bootstrap";
 
 import * as ingredientsActions from "../../store/actions/ingredientsActions/ingredientsActions";
 import BuildControls from "../../components/BuildControls/BuildControls";
@@ -15,8 +16,15 @@ const BurgerBuilder = () => {
   const currentBurgerIsPurchasable = ingredients.isPurchasable;
   const currentBurger = ingredients.currentBurgerIng;
 
+  const [showAddToCartAlert, setShowAddToCartAlert] = useState(false);
+  const addToCartAlertTimer = useRef();
+
   useEffect(() => {
     dispatch(ingredientsActions.loadAllIngredients());
+
+    return () => {
+      clearTimeout(addToCartAlertTimer.current);
+    };
   }, [dispatch]);
 
   const addIngredientHandler = (ingId) => {
@@ -28,7 +36,6 @@ const BurgerBuilder = () => {
   };
 
   const disabledIngredientInfo = (ingId) => {
-    //alternative of currentBurger[ingId] && currentBurger[ingId].qty > 0
     if (currentBurger[ingId]?.qty > 0) {
       return false;
     } else {
@@ -43,11 +50,20 @@ const BurgerBuilder = () => {
     };
     addItemToCart(item);
     dispatch(ingredientsActions.resetBurgerBuilder());
+    setShowAddToCartAlert(true);
+    addToCartAlertTimer.current = setTimeout(() => {
+      setShowAddToCartAlert(false);
+    }, 2000);
   };
 
   return (
     <>
       <div className="container-xl mt-3">
+        {showAddToCartAlert === true && (
+          <div>
+            <Alert variant="success">Burger added to cart</Alert>
+          </div>
+        )}
         <div className="row">
           <div className="col-lg-4 col-md-5 col-sm-8 col-12">
             <Burger ingredients={currentBurger} header={`Burger in making!!`} />

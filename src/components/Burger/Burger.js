@@ -2,10 +2,7 @@ import React from "react";
 import styles from "./Burger.module.css";
 import BurgerIngredient from "./BurgerIngredient/BurgerIngredient";
 
-const Burger = (props) => {
-  // console.log(props.ingredients)
-
-  //TODO: look how is this working
+const Burger = React.memo((props) => {
   let transformedIngredients = Object.keys(props.ingredients)
     .map((igKey) => {
       return [...Array(props.ingredients[igKey].qty)].map((_, i) => {
@@ -23,6 +20,7 @@ const Burger = (props) => {
       </p>
     );
   }
+
   return (
     <div className="card  overflow-auto bg-dark">
       {props.header && (
@@ -37,5 +35,6 @@ const Burger = (props) => {
       </div>
     </div>
   );
-};
+});
+
 export default Burger;

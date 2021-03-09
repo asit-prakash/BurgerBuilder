@@ -60,7 +60,7 @@ const Cart = (props) => {
   useEffect(() => {
     let sum = 0;
 
-    cartItems.map((item) => {
+    cartItems?.length > 0 && cartItems.map((item) => {
       for (let key in item) {
         sum = sum + item[key].itemPrice;
       }

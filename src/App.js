@@ -12,6 +12,7 @@ import cartReducers from "./store/reducers/cartReducers/cartReducers";
 import authReducer from "./store/reducers/authReducer/authReducer";
 import orderReducer from "./store/reducers/orderReducer/orderReducer";
 import commonReducer from "./store/reducers/commonReducer/commonReducer";
+import ErrorBoundary from "./containers/ErrorBoundary/ErrorBoundary";
 
 const rootReducer = combineReducers({
   ingredients: ingredientsReducers,
@@ -35,7 +36,9 @@ const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Routes />
+        <ErrorBoundary>
+          <Routes />
+        </ErrorBoundary>
       </PersistGate>
     </Provider>
   );
